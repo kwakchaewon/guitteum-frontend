@@ -4,8 +4,18 @@ import { useRoute, useRouter } from 'vue-router'
 import { ArrowLeft, Calendar, MapPin, FileText } from 'lucide-vue-next'
 import { useSpeechStore } from '@/stores/speechStore'
 import { Card, CardContent } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Skeleton } from '@/components/ui/skeleton'
+
+const CATEGORY_LABELS = {
+  ECONOMY: '경제',
+  FOREIGN: '외교',
+  WELFARE: '민생/복지',
+  DEFENSE: '안보/국방',
+  ENVIRONMENT: '환경',
+  ETC: '기타',
+}
 
 const route = useRoute()
 const router = useRouter()
@@ -81,6 +91,9 @@ const goBack = () => {
             <MapPin :size="14" />
             {{ speech.eventName }}
           </span>
+          <Badge v-if="speech.category" variant="secondary">
+            {{ CATEGORY_LABELS[speech.category] || speech.category }}
+          </Badge>
         </div>
       </header>
 

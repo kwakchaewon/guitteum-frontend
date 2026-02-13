@@ -14,6 +14,8 @@ const props = defineProps({
   },
 })
 
+const emit = defineEmits(['category-click'])
+
 const chartRef = ref(null)
 let chartInstance = null
 
@@ -27,6 +29,10 @@ const CATEGORY_LABELS = {
   ENVIRONMENT: '환경',
   ETC: '기타',
 }
+
+const LABEL_TO_CATEGORY = Object.fromEntries(
+  Object.entries(CATEGORY_LABELS).map(([k, v]) => [v, k]),
+)
 
 const getOption = () => ({
   tooltip: {
@@ -80,6 +86,12 @@ const initChart = () => {
   if (!chartRef.value) return
   chartInstance = echarts.init(chartRef.value)
   chartInstance.setOption(getOption())
+  chartInstance.on('click', (params) => {
+    const categoryKey = LABEL_TO_CATEGORY[params.name]
+    if (categoryKey) {
+      emit('category-click', categoryKey)
+    }
+  })
 }
 
 const handleResize = () => {

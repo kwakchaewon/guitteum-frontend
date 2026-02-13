@@ -2,6 +2,16 @@
 import { RouterLink } from 'vue-router'
 import { Calendar, MapPin } from 'lucide-vue-next'
 import { Card, CardContent } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+
+const CATEGORY_LABELS = {
+  ECONOMY: '경제',
+  FOREIGN: '외교',
+  WELFARE: '민생/복지',
+  DEFENSE: '안보/국방',
+  ENVIRONMENT: '환경',
+  ETC: '기타',
+}
 
 const props = defineProps({
   speech: {
@@ -42,6 +52,9 @@ const formatDate = (dateStr) => {
             <MapPin :size="12" />
             {{ speech.eventName }}
           </span>
+          <Badge v-if="speech.category" variant="secondary" class="text-[10px] px-1.5 py-0">
+            {{ CATEGORY_LABELS[speech.category] || speech.category }}
+          </Badge>
         </div>
       </CardContent>
     </Card>

@@ -1,9 +1,9 @@
 <script setup>
-import { ref, watch } from 'vue'
+import { ref } from 'vue'
 import { Filter, ChevronDown, ChevronUp } from 'lucide-vue-next'
-import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import CategoryFilter from '@/components/chat/CategoryFilter.vue'
 
 const props = defineProps({
   dateFrom: {
@@ -24,17 +24,7 @@ const emit = defineEmits(['update:dateFrom', 'update:dateTo', 'update:category',
 
 const isOpen = ref(false)
 
-const categories = [
-  { value: '', label: '전체' },
-  { value: 'ECONOMY', label: '경제' },
-  { value: 'FOREIGN', label: '외교' },
-  { value: 'WELFARE', label: '민생/복지' },
-  { value: 'DEFENSE', label: '안보/국방' },
-  { value: 'ENVIRONMENT', label: '환경' },
-  { value: 'ETC', label: '기타' },
-]
-
-const selectCategory = (value) => {
+const handleCategoryChange = (value) => {
   emit('update:category', value)
   emit('filter')
 }
@@ -72,17 +62,10 @@ const toggleFilter = () => {
       <!-- Category Filter -->
       <div>
         <p class="mb-2 text-xs font-medium text-muted-foreground">카테고리</p>
-        <div class="flex flex-wrap gap-2 overflow-x-auto md:flex-wrap">
-          <Badge
-            v-for="cat in categories"
-            :key="cat.value"
-            :variant="category === cat.value ? 'default' : 'outline'"
-            class="cursor-pointer whitespace-nowrap transition-colors"
-            @click="selectCategory(cat.value)"
-          >
-            {{ cat.label }}
-          </Badge>
-        </div>
+        <CategoryFilter
+          :model-value="category"
+          @update:model-value="handleCategoryChange"
+        />
       </div>
 
       <!-- Date Range Filter -->

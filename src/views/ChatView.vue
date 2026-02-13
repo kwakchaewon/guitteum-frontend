@@ -7,6 +7,7 @@ import { useChatStore } from '@/stores/chatStore'
 import ChatBubble from '@/components/chat/ChatBubble.vue'
 import ChatInput from '@/components/chat/ChatInput.vue'
 import ChatHistory from '@/components/chat/ChatHistory.vue'
+import CategoryFilter from '@/components/chat/CategoryFilter.vue'
 
 const chatStore = useChatStore()
 const messagesContainer = ref(null)
@@ -87,6 +88,11 @@ onMounted(() => {
           <span class="hidden sm:inline">새 대화</span>
         </Button>
       </div>
+    </div>
+
+    <!-- 카테고리 필터 -->
+    <div class="border-b border-border px-4 py-2">
+      <CategoryFilter v-model="chatStore.category" />
     </div>
 
     <!-- 메시지 영역 -->

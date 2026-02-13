@@ -29,6 +29,7 @@ export const useChatStore = defineStore('chat', () => {
   const streaming = ref(false)
   const error = ref(null)
   const sessions = ref(loadSavedSessions())
+  const category = ref('')
 
   const hasMessages = computed(() => messages.value.length > 0)
   const isProcessing = computed(() => loading.value || streaming.value)
@@ -88,7 +89,7 @@ export const useChatStore = defineStore('chat', () => {
     error.value = null
 
     try {
-      const { data } = await sendChatMessage(sessionId.value, question)
+      const { data } = await sendChatMessage(sessionId.value, question, category.value)
 
       if (data.sessionId) {
         sessionId.value = data.sessionId
@@ -126,9 +127,12 @@ export const useChatStore = defineStore('chat', () => {
 
     const aiMsgIndex = messages.value.length - 1
 
+    const body = { sessionId: sessionId.value, question }
+    if (category.value) body.category = category.value
+
     await startStream(
       '/chat/stream',
-      { sessionId: sessionId.value, question },
+      body,
       {
         onToken: (text) => {
           messages.value[aiMsgIndex].content += text
@@ -208,6 +212,7 @@ export const useChatStore = defineStore('chat', () => {
     sessionId.value = null
     messages.value = []
     error.value = null
+    category.value = ''
   }
 
   const deleteSessionById = async (id) => {
@@ -232,6 +237,7 @@ export const useChatStore = defineStore('chat', () => {
     streaming,
     error,
     sessions,
+    category,
     hasMessages,
     isProcessing,
     initSession,

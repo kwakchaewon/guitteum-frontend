@@ -31,6 +31,10 @@ const handleKeywordClick = (keyword) => {
   router.push({ name: 'search', query: { q: keyword } })
 }
 
+const handleCategoryClick = (category) => {
+  router.push({ name: 'search', query: { category } })
+}
+
 onMounted(() => {
   statsStore.fetchAll()
   speechStore.fetchSpeeches({ size: 5 })
@@ -166,7 +170,7 @@ const formatDate = (dateStr) => {
           <template v-if="statsStore.loading">
             <Skeleton class="h-[280px] w-full rounded-lg" />
           </template>
-          <PieChart v-else :data="statsStore.categoryData" />
+          <PieChart v-else :data="statsStore.categoryData" @category-click="handleCategoryClick" />
         </CardContent>
       </Card>
 

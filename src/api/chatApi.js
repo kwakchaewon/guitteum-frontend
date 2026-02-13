@@ -1,7 +1,9 @@
 import api from './axios'
 
-export const sendMessage = (sessionId, question) => {
-  return api.post('/chat', { sessionId, question })
+export const sendMessage = (sessionId, question, category = '') => {
+  const body = { sessionId, question }
+  if (category) body.category = category
+  return api.post('/chat', body)
 }
 
 export const getSessionMessages = (sessionId, params = {}) => {
