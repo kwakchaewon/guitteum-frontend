@@ -113,13 +113,9 @@ const formatDate = (dateStr) => {
               :to="`/speeches/${speech.id}`"
               class="block rounded-lg border border-border p-4 transition-colors hover:border-primary/30 hover:bg-surface/50"
             >
-              <div class="mb-2 flex items-start justify-between gap-2">
-                <h3 class="text-sm font-medium leading-snug">{{ speech.title }}</h3>
-                <Badge v-if="speech.category" variant="secondary" class="shrink-0 text-xs">
-                  {{ speech.category }}
-                </Badge>
-              </div>
-              <p class="text-xs text-muted-foreground">{{ formatDate(speech.date) }}</p>
+              <h3 class="mb-1 text-sm font-medium leading-snug">{{ speech.title }}</h3>
+              <p v-if="speech.eventName" class="mb-1 text-xs text-muted-foreground">{{ speech.eventName }}</p>
+              <p class="text-xs text-muted-foreground">{{ formatDate(speech.speechDate) }}</p>
             </RouterLink>
           </div>
 
@@ -129,7 +125,7 @@ const formatDate = (dateStr) => {
               <TableHeader>
                 <TableRow>
                   <TableHead>제목</TableHead>
-                  <TableHead class="w-[120px]">카테고리</TableHead>
+                  <TableHead class="w-[160px]">행사명</TableHead>
                   <TableHead class="w-[140px]">날짜</TableHead>
                 </TableRow>
               </TableHeader>
@@ -143,13 +139,11 @@ const formatDate = (dateStr) => {
                       {{ speech.title }}
                     </RouterLink>
                   </TableCell>
-                  <TableCell>
-                    <Badge v-if="speech.category" variant="secondary">
-                      {{ speech.category }}
-                    </Badge>
+                  <TableCell class="text-muted-foreground">
+                    {{ speech.eventName }}
                   </TableCell>
                   <TableCell class="text-muted-foreground">
-                    {{ formatDate(speech.date) }}
+                    {{ formatDate(speech.speechDate) }}
                   </TableCell>
                 </TableRow>
               </TableBody>
