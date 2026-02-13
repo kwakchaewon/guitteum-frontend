@@ -183,18 +183,18 @@ guitteum-frontend/
 
 > 목표: 검색 UI 구현 + 연설문 상세 페이지
 
-- [ ] `SearchView.vue` 구현
+- [x] `SearchView.vue` 구현
   - 반응형 검색창 (모바일: 전체 너비, 데스크톱: 중앙 정렬)
   - 검색 결과 카드 리스트
-- [ ] `SearchBar.vue` 컴포넌트
-- [ ] `SearchFilter.vue` 컴포넌트
+- [x] `SearchBar.vue` 컴포넌트
+- [x] `SearchFilter.vue` 컴포넌트
   - 날짜 범위 선택 (모바일: 드롭다운, 데스크톱: 인라인)
   - 카테고리 필터 (칩 형태)
-- [ ] `SearchResult.vue` 컴포넌트 (검색 결과 개별 카드)
-- [ ] Pagination 컴포넌트 (shadcn-vue)
-- [ ] `searchApi.js` 작성
-- [ ] `SpeechDetailView.vue` 구현 (연설문 전문 보기)
-- [ ] 라우터에 검색, 상세 페이지 추가
+- [x] `SearchResult.vue` 컴포넌트 (검색 결과 개별 카드)
+- [x] Pagination 컴포넌트 (shadcn-vue)
+- [x] `searchApi.js` 작성
+- [x] `SpeechDetailView.vue` 구현 (연설문 전문 보기)
+- [x] 라우터에 검색, 상세 페이지 추가
 
 #### 완료 기준
 - [x] 검색 결과 카드 리스트 정상 렌더링
@@ -207,11 +207,11 @@ guitteum-frontend/
 
 > 목표: 전역 상태 관리 + 로딩/에러 UX 완성
 
-- [ ] Pinia 스토어 기본 구조 작성 (`speechStore.js`)
-- [ ] 로딩 상태 관리 (전역 로딩 인디케이터)
-- [ ] Skeleton 컴포넌트 적용 (목록, 상세 페이지)
-- [ ] Toast 알림 구현 (에러 핸들링)
-- [ ] 검색 페이지 UX 개선 (디바운스 등)
+- [x] Pinia 스토어 기본 구조 작성 (`speechStore.js`)
+- [x] 로딩 상태 관리 (전역 로딩 인디케이터)
+- [x] Skeleton 컴포넌트 적용 (목록, 상세 페이지)
+- [x] Toast 알림 구현 (에러 핸들링)
+- [x] 검색 페이지 UX 개선 (디바운스 등)
 
 #### 완료 기준
 - [x] Skeleton 로딩 UI 정상 표시
