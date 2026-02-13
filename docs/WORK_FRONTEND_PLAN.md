@@ -160,18 +160,18 @@ guitteum-frontend/
 
 > 목표: Vue 프로젝트 초기화 → 레이아웃 → 연설문 목록 화면 출력
 
-- [ ] Vue 3 + Vite 프로젝트 생성 (`guitteum-frontend/`)
-- [ ] Tailwind CSS 설치 및 설정
-- [ ] shadcn-vue 설치 및 초기 설정
+- [x] Vue 3 + Vite 프로젝트 생성 (`guitteum-frontend/`)
+- [x] Tailwind CSS 설치 및 설정
+- [x] shadcn-vue 설치 및 초기 설정
   - 기본 컴포넌트: Button, Card, Input, Badge, Skeleton, Table
-- [ ] Vue Router 설정 (라우트 정의)
-- [ ] Axios 인스턴스 생성 (`api/axios.js`)
-- [ ] `speechApi.js` 작성 (목록, 상세 API 호출)
-- [ ] `AppHeader.vue` 구현 (반응형 네비게이션)
-- [ ] `MobileMenu.vue` 구현 (햄버거 메뉴)
-- [ ] `HomeView.vue` 초안 (간단한 히어로 섹션 + 연설문 목록 테이블)
-- [ ] 기본 CSS 변수 설정 (Linear 스타일 색상 팔레트, 다크모드)
-- [ ] 폰트 설정 (Inter + Pretendard)
+- [x] Vue Router 설정 (라우트 정의)
+- [x] Axios 인스턴스 생성 (`api/axios.js`)
+- [x] `speechApi.js` 작성 (목록, 상세 API 호출)
+- [x] `AppHeader.vue` 구현 (반응형 네비게이션)
+- [x] `MobileMenu.vue` 구현 (햄버거 메뉴)
+- [x] `HomeView.vue` 초안 (간단한 히어로 섹션 + 연설문 목록 테이블)
+- [x] 기본 CSS 변수 설정 (Linear 스타일 색상 팔레트, 다크모드)
+- [x] 폰트 설정 (Inter + Pretendard)
 
 #### 완료 기준
 - [x] 프론트엔드 화면에 연설문 목록 테이블 표시
