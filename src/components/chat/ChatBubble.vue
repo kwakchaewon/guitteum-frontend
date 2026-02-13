@@ -17,6 +17,10 @@ const props = defineProps({
     type: Array,
     default: () => [],
   },
+  streaming: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 const isUser = computed(() => props.role === 'USER')
@@ -48,7 +52,10 @@ const isUser = computed(() => props.role === 'USER')
             : 'rounded-tl-md bg-muted text-foreground'
         "
       >
-        <p class="whitespace-pre-wrap">{{ content }}</p>
+        <p class="whitespace-pre-wrap">{{ content }}<span
+          v-if="streaming"
+          class="ml-0.5 inline-block h-4 w-0.5 animate-blink bg-current align-middle"
+        /></p>
       </div>
 
       <!-- 출처 카드 -->
