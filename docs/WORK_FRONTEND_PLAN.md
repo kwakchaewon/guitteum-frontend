@@ -224,21 +224,21 @@ guitteum-frontend/
 
 > 목표: 채팅 인터페이스 구현 (JSON 응답 기반)
 
-- [ ] `ChatView.vue` 구현
+- [x] `ChatView.vue` 구현
   - 반응형 채팅 레이아웃 (모바일: 전체 화면, 데스크톱: 중앙 정렬)
   - 메시지 목록 영역 (스크롤)
   - 입력창 + 전송 버튼
-- [ ] `ChatBubble.vue` 구현
+- [x] `ChatBubble.vue` 구현
   - 사용자 메시지: 오른쪽 정렬, primary 색상
   - AI 메시지: 왼쪽 정렬, muted 색상
   - 메시지 너비: 모바일 85%, 데스크톱 70%
-- [ ] `SourceCard.vue` 구현
+- [x] `SourceCard.vue` 구현
   - Collapsible 출처 카드 (shadcn-vue Collapsible)
   - 연설문 제목, 날짜 표시 → 클릭 시 상세 페이지 이동
-- [ ] `ChatInput.vue` 구현 (Enter 전송, 버튼 전송)
-- [ ] `chatApi.js` 작성
-- [ ] `chatStore.js` 구현 (세션 관리, 메시지 목록)
-- [ ] 라우터에 챗봇 페이지 추가
+- [x] `ChatInput.vue` 구현 (Enter 전송, 버튼 전송)
+- [x] `chatApi.js` 작성
+- [x] `chatStore.js` 구현 (세션 관리, 메시지 목록)
+- [x] 라우터에 챗봇 페이지 추가
 
 #### 완료 기준
 - [x] 채팅 UI에서 질문 → 답변 표시
@@ -251,18 +251,18 @@ guitteum-frontend/
 
 > 목표: SSE 실시간 스트리밍 UI + 대화 히스토리
 
-- [ ] `useSSE.js` composable 구현
+- [x] `useSSE.js` composable 구현
   - EventSource API로 SSE 연결
   - `token` 이벤트 → 메시지에 점진적 추가
   - `sources` 이벤트 → 출처 카드 렌더링
   - `done` 이벤트 → 스트리밍 종료 처리
-- [ ] 타이핑 효과 구현 (CSS 애니메이션)
-- [ ] "새 대화" 버튼 구현 (세션 초기화)
-- [ ] 대화 히스토리 사이드 패널
+- [x] 타이핑 효과 구현 (CSS 애니메이션)
+- [x] "새 대화" 버튼 구현 (세션 초기화)
+- [x] 대화 히스토리 사이드 패널
   - 모바일: Sheet (슬라이드 인)
   - 데스크톱: Sidebar
-- [ ] 로딩 인디케이터 (AI 답변 생성 중)
-- [ ] 에러 처리 (네트워크 오류, 타임아웃)
+- [x] 로딩 인디케이터 (AI 답변 생성 중)
+- [x] 에러 처리 (네트워크 오류, 타임아웃)
 
 #### 완료 기준
 - [x] 질문 입력 → 답변이 한 글자씩 스트리밍 출력
