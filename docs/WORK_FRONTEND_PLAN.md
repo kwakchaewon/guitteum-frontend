@@ -275,23 +275,23 @@ guitteum-frontend/
 
 > 목표: 연설문 통계 시각화 (워드클라우드, 차트)
 
-- [ ] Apache ECharts 설치 및 설정
-- [ ] `HomeView.vue` 대시보드 리뉴얼 (Linear 스타일)
+- [x] Apache ECharts 설치 및 설정
+- [x] `HomeView.vue` 대시보드 리뉴얼 (Linear 스타일)
   - 히어로 섹션 (AI 질문 입력창)
   - 통계 요약 카드 4개 (총 연설문, 주요 키워드, AI 질문 수, 평균 응답)
   - 차트 그리드
-- [ ] `StatCard.vue` 구현 (큰 숫자 + 트렌드 표시)
-- [ ] `WordCloud.vue` 구현 (ECharts wordCloud)
+- [x] `StatCard.vue` 구현 (큰 숫자 + 트렌드 표시)
+- [x] `WordCloud.vue` 구현 (ECharts wordCloud)
   - 키워드 클릭 → 관련 연설문 검색 페이지 이동
-- [ ] `LineChart.vue` 구현 (월별 연설 추이)
+- [x] `LineChart.vue` 구현 (월별 연설 추이)
   - Linear 스타일 그라디언트 area
   - 6개월/1년 토글
-- [ ] `PieChart.vue` 구현 (카테고리별 분포)
+- [x] `PieChart.vue` 구현 (카테고리별 분포)
   - 범례 리스트 (Linear 스타일)
-- [ ] `statsApi.js` 작성
-- [ ] `statsStore.js` 구현
-- [ ] 반응형 차트 (모바일: 1열, 태블릿 이상: 2열 그리드)
-- [ ] 터치 제스처 지원 (차트 확대/축소)
+- [x] `statsApi.js` 작성
+- [x] `statsStore.js` 구현
+- [x] 반응형 차트 (모바일: 1열, 태블릿 이상: 2열 그리드)
+- [x] 터치 제스처 지원 (차트 확대/축소)
 
 #### 완료 기준
 - [x] 대시보드에 TOP 20 키워드 워드클라우드 표시
