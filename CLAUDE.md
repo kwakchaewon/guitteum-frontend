@@ -1,7 +1,7 @@
 # CLAUDE.md - Guitteum Frontend
 
 ## Project
-AI 기반 대통령 연설문 분석 플랫폼 (귀띔) 프론트엔드.
+AI 기반 정책 브리핑 연설문 분석 플랫폼 (귀띔) 프론트엔드. 문화체육관광부_정책브리핑_연설문_API 기반.
 Vue 3 + Vite + shadcn-vue + Tailwind CSS. JavaScript (no TypeScript).
 
 ## Tech Stack
