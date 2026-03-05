@@ -55,7 +55,8 @@ const formatDate = (dateStr) => {
         AI 기반 정책 브리핑 연설문 분석 플랫폼
       </h1>
       <p class="mx-auto mb-6 max-w-xl text-sm text-muted-foreground">
-        대통령, 국무총리, 각 부처 장관의 공식 연설문을 수집·분석하여 정책 질의응답, 키워드 트렌드, 통계를 제공합니다.
+        각 부처별 공식 연설문을 수집·분석하여<br>
+        정책 질의응답, 키워드 트렌드, 통계를 제공합니다.
       </p>
 
       <!-- AI 질문 입력창 -->
