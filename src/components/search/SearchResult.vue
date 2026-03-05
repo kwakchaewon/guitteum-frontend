@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-import { Calendar, MapPin } from 'lucide-vue-next'
+import { Calendar, MapPin, User } from 'lucide-vue-next'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 
@@ -51,6 +51,10 @@ const formatDate = (dateStr) => {
           <span v-if="speech.eventName" class="inline-flex items-center gap-1">
             <MapPin :size="12" />
             {{ speech.eventName }}
+          </span>
+          <span v-if="speech.speaker" class="inline-flex items-center gap-1">
+            <User :size="12" />
+            {{ speech.speaker }}
           </span>
           <Badge v-if="speech.category" variant="secondary" class="text-[10px] px-1.5 py-0">
             {{ CATEGORY_LABELS[speech.category] || speech.category }}

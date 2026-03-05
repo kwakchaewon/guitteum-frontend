@@ -15,6 +15,7 @@ const router = useRouter()
 
 const query = ref(route.query.q || '')
 const category = ref(route.query.category || '')
+const speaker = ref(route.query.speaker || '')
 const dateFrom = ref(route.query.dateFrom || '')
 const dateTo = ref(route.query.dateTo || '')
 const currentPage = ref(Number(route.query.page) || 0)
@@ -38,6 +39,7 @@ const fetchResults = async () => {
 
     if (query.value) params.query = query.value
     if (category.value) params.category = category.value
+    if (speaker.value) params.speaker = speaker.value
     if (dateFrom.value) params.dateFrom = dateFrom.value
     if (dateTo.value) params.dateTo = dateTo.value
 
@@ -63,6 +65,7 @@ const updateQueryParams = () => {
   const queryParams = {}
   if (query.value) queryParams.q = query.value
   if (category.value) queryParams.category = category.value
+  if (speaker.value) queryParams.speaker = speaker.value
   if (dateFrom.value) queryParams.dateFrom = dateFrom.value
   if (dateTo.value) queryParams.dateTo = dateTo.value
   if (currentPage.value > 0) queryParams.page = currentPage.value
@@ -115,6 +118,7 @@ fetchResults()
         v-model:date-from="dateFrom"
         v-model:date-to="dateTo"
         v-model:category="category"
+        v-model:speaker="speaker"
         @filter="handleFilter"
       />
     </div>

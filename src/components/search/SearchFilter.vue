@@ -18,9 +18,13 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  speaker: {
+    type: String,
+    default: '',
+  },
 })
 
-const emit = defineEmits(['update:dateFrom', 'update:dateTo', 'update:category', 'filter'])
+const emit = defineEmits(['update:dateFrom', 'update:dateTo', 'update:category', 'update:speaker', 'filter'])
 
 const isOpen = ref(false)
 
@@ -65,6 +69,18 @@ const toggleFilter = () => {
         <CategoryFilter
           :model-value="category"
           @update:model-value="handleCategoryChange"
+        />
+      </div>
+
+      <!-- Speaker Filter -->
+      <div>
+        <label class="mb-1 block text-xs font-medium text-muted-foreground">발화자</label>
+        <Input
+          type="text"
+          placeholder="예: 대통령, 국무총리"
+          :model-value="speaker"
+          class="h-9 text-sm"
+          @update:model-value="(val) => { emit('update:speaker', val); emit('filter') }"
         />
       </div>
 

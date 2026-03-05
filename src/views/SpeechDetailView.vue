@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { ArrowLeft, Calendar, MapPin, FileText } from 'lucide-vue-next'
+import { ArrowLeft, Calendar, MapPin, FileText, User } from 'lucide-vue-next'
 import { useSpeechStore } from '@/stores/speechStore'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -90,6 +90,10 @@ const goBack = () => {
           <span v-if="speech.eventName" class="inline-flex items-center gap-1.5">
             <MapPin :size="14" />
             {{ speech.eventName }}
+          </span>
+          <span v-if="speech.speaker" class="inline-flex items-center gap-1.5">
+            <User :size="14" />
+            {{ speech.speaker }}
           </span>
           <Badge v-if="speech.category" variant="secondary">
             {{ CATEGORY_LABELS[speech.category] || speech.category }}
