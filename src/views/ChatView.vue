@@ -109,10 +109,10 @@ onMounted(() => {
           <MessageSquare :size="32" class="text-primary" />
         </div>
         <h2 class="mb-2 text-lg font-semibold tracking-tight">
-          대통령 연설문에 대해 물어보세요
+          정책 브리핑 연설문에 대해 물어보세요
         </h2>
         <p class="mb-8 max-w-sm text-center text-sm text-muted-foreground">
-          AI가 연설문을 분석하여 정책, 키워드, 맥락에 대한 답변을 제공합니다.
+          대통령, 국무총리, 장관의 공식 연설문을 분석하여 정책 방향과 주요 메시지에 대한 답변을 제공합니다.
         </p>
 
         <!-- 예시 질문 -->
