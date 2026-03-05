@@ -1,7 +1,7 @@
 import api from './axios'
 
 export const sendMessage = (sessionId, question, category = '') => {
-  const body = { sessionId, question }
+  const body = { sessionId, message: question }
   if (category) body.category = category
   return api.post('/chat', body)
 }

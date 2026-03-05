@@ -127,7 +127,7 @@ export const useChatStore = defineStore('chat', () => {
 
     const aiMsgIndex = messages.value.length - 1
 
-    const body = { sessionId: sessionId.value, question }
+    const body = { sessionId: sessionId.value, message: question }
     if (category.value) body.category = category.value
 
     await startStream(
